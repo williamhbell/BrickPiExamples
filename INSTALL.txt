@@ -1,0 +1,5 @@
+To install the python modules needed for these examples, together with their dependencies and configure the serial port, type:
+
+sudo ./bin/setup-brickpi.sh
+
+The script only needs to be run once.
