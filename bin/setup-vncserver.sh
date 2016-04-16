@@ -43,8 +43,8 @@ create_initd_script() {
 
 ### BEGIN INIT INFO
 # Provides: $vnc_script_name
-# Required-Start: \$remote_fs \$syslog
-# Required-Stop: \$remote_fs \$syslog
+# Required-Start: \$network \$remote_fs \$syslog
+# Required-Stop: \$network \$remote_fs \$syslog
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
 # Short-Description: Start VNC Server at boot time
