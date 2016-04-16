@@ -14,7 +14,7 @@ usage() {
 }
 
 # There must be at least one argument
-if [[ $# < 1 or $# > 2 ]]; then
+if [[ $# < 1 || $# > 2 ]]; then
   usage
 fi
 scratch_file="$1"
