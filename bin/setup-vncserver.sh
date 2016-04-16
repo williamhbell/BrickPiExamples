@@ -1,7 +1,7 @@
 #!/bin/bash
 # W. H. Bell
 #
-# A script to install and configure tightvnc.
+# A script to install and configure a tightvnc server.
 #
 # -------------------------------------
 # Global variables
@@ -51,26 +51,42 @@ create_initd_script() {
 # Description: Start VNC Server at boot time.
 ### END INIT INFO
 
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+. /lib/lsb/init-functions
+
 USER=$vnc_user
 HOME=$vnc_home
 
 export USER HOME
 
+start() {
+  log_action_msg "Starting VNC Server"
+  su - $USER -c "/usr/bin/vncserver :1 -geometry 1350x690 -depth 16 -pixelformat rgb565"
+}
+
+stop() {
+  log_action_msg "Stopping VNC Server"
+  /usr/bin/vncserver -kill :1
+}
+
 case "\$1" in
  start)
-  echo "Starting VNC Server"
-  #Insert your favoured settings for a VNC session
-  su - \$USER -c "/usr/bin/vncserver :1 -geometry 1280x800 -depth 16 -pixelformat rgb565"
+  start
   ;;
 
  stop)
-  echo "Stopping VNC Server"
-  /usr/bin/vncserver -kill :1
+  stop
+  ;;
+
+ restart)
+  stop
+  start
   ;;
 
  *)
-  echo "Usage: $vnc_script_path {start|stop}"
-  exit 1
+  log_success_msg "Usage: /etc/init.d/vncboot {start|stop|restart}"
+  return 1
   ;;
 esac
 
