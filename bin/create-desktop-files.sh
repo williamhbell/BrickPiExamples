@@ -9,8 +9,10 @@
 # Need the full path, in case someone has given a relative path
 full_path=$(readlink -f $0)
 
-# Find the base directory
+# Find the base directory.  This relies on the script being in the bin/ 
+# directory.
 base_dir=$(dirname $full_path)
+base_dir=$(dirname $base_dir)
 
 # Find the name of all of the Scratch files
 # (This is not safe if someone has used a space in the
