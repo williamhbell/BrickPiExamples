@@ -55,14 +55,11 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 
 . /lib/lsb/init-functions
 
-USER=$vnc_user
-HOME=$vnc_home
-
 export USER HOME
 
 start() {
   log_action_msg "Starting VNC Server"
-  su - $USER -c "/usr/bin/vncserver :1 -geometry 1350x690 -depth 16 -pixelformat rgb565"
+  su - $vnc_user -c "/usr/bin/vncserver :1 -geometry 1350x690 -depth 16 -pixelformat rgb565"
 }
 
 stop() {
