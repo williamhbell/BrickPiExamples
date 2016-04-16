@@ -26,7 +26,7 @@ sudo ./bin/setup-vncserver.sh
 This will install the TightVNC server, together with a init.d script that
 will start the VNC server when the Raspberry Pi is booted.  When the script
 runs, it will prompt for a new password.  This is the password that should
-be used to access the vnc server from a vncviewer.  To use the vnc server,
+be used to access the TightVNC server from a vncviewer.  To use the vnc server,
 type
 ```
 sudo /etc/init.d/tightvncserver start 
@@ -34,3 +34,13 @@ sudo /etc/init.d/tightvncserver start
 or reboot the Raspberry Pi
 
 ## Example programs
+
+The Scratch example programs are given in the scratch/ directory.
+Documentation is given in the scratch/doc/ directory.  Each example
+can be run as described in the documentation or using the launch 
+script.  For example, 
+
+./bin/launchRpiScratchIO.sh scratch/src/simple.sb
+
+will open the simple.sb Scratch program and start the Python code
+that connects to the BrickPi.
