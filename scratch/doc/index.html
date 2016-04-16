@@ -9,17 +9,17 @@ Robotics with BrickPi and Scratch
 <p>
 W. H. Bell
 </p>
-
-<h3>Introduction</h3>
+<h3>Foreword</h3>
 <p>
 This article was originally published in Issue 23 of the MagPi magazine.  Since the first publication, the
 installation instructions have been updated to the latest Raspbian version and are now present in a separate file.
 Instructions to describe how to create desktop icons have also been added.  
 </p>
+<h3>Introduction</h3>
 <p>
 The BrickPi provides an interface between LEGO&reg; MINDSTORMS&reg; motors and sensors and the Raspberry Pi.  The 
 board has five sensor ports and four motor ports.  The Raspberry Pi communicates with the BrickPi over the 
-serial port (UART), which is available via pins 8 and 10 of the 26 pin header on the Raspberry Pi: <a 
+serial port (UART), which is available via pins 8 and 10 of the 40 (or 26) pin header of the Raspberry Pi: <a 
 href="http://elinux.org/RPi_Low-level_peripherals">http://elinux.org/RPi_Low-level_peripherals</a>
 </p>
 <p>
@@ -50,7 +50,7 @@ port ready to talk to the BrickPi.  Then reboot the Raspberry Pi.
 
 <h3>Building the tank</h3>
 <p>
-Follow the instructions given at, <a href="http://www.dexterindustries.com/BrickPi/projects/tank/">http://www.dexterindustries.com/BrickPi/projects/tank/</a> 
+Follow the instructions given at <a href="http://www.dexterindustries.com/BrickPi/projects/tank/">http://www.dexterindustries.com/BrickPi/projects/tank/</a> 
 to build a tracked vehicle.  Then put the BrickPi on top and connect the right motor to BrickPi port MA and 
 the left motor to BrickPi port MB.  Finally, add a forward-facing ultrasonic sensor and connect it to BrickPi 
 sensor port S1.  The BrickPi port labelling is given in The MagPi Issue 18 article on the BrickPi.
@@ -58,7 +58,7 @@ sensor port S1.  The BrickPi port labelling is given in The MagPi Issue 18 artic
 
 <h3>Human controlled tank</h3>
 <p>
-The BrickPi has to be appropriately configured for each different LEGO® sensor.  Create a new file called 
+The BrickPi has to be appropriately configured for each different LEGO&reg; sensor.  Create a new file called 
 tank.cfg that contains the following definitions: Now open Scratch and enable remote sensor connections, by 
 selecting the "Sensing" palette and right clicking on "sensor value" at the bottom of the tool palette.  (For 
 the current Raspbian version of Scratch, the remote sensor connections need to be disabled and then 
@@ -162,7 +162,7 @@ BrickPiScratch(0,"s")
 <p>
 The number zero is the period of the automatic update in units of tenths of a second, where zero disables the 
 automatic update of sensor values.  The value "s" configures all active sensors to be automatically updated.  
-Other options are given at: https://pypi.python.org/pypi/BrickPi
+Other options are given at: <a href="https://pypi.python.org/pypi/BrickPi">https://pypi.python.org/pypi/BrickPi</a>
 </p>
 <p>
 Close the previous Scratch window and open a new one.  Set up the remote sensor connections as before.  Then 
