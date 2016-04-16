@@ -52,10 +52,7 @@ create_initd_script() {
 ### END INIT INFO
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-
 . /lib/lsb/init-functions
-
-export USER HOME
 
 start() {
   log_action_msg "Starting VNC Server"
