@@ -38,10 +38,11 @@ for file in $scratch_files; do
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Name=$prog_name
-Comment=$prog_name
 Icon=scratch
-Exec=lxterminal -e $base_dir/bin/launchRpiScratchIO.sh $file -t "RpiScratchIO:$prog_name"
-Terminal=false
+Exec=$base_dir/bin/launchRpiScratchIO.sh $file 
+Terminal=true
+Name[en_GB]=Launch: $prog_name
+Path=/home/pi
+GenericName=Launch: $prog_name
 EOF
 done
