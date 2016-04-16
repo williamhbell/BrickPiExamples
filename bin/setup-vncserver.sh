@@ -61,7 +61,7 @@ start() {
 
 stop() {
   log_action_msg "Stopping VNC Server"
-  /usr/bin/vncserver -kill :1
+  pkill Xtightvnc
 }
 
 case "\$1" in
