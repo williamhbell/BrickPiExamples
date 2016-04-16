@@ -15,7 +15,7 @@ base_dir=$(dirname $full_path)
 # Find the name of all of the Scratch files
 # (This is not safe if someone has used a space in the
 # file name!)
-scratch_files=$(ls $full_path/scratch/examples/*.sb)
+scratch_files=$(ls $base_dir/scratch/examples/*.sb)
 
 for file in $scratch_files; do
   cfg=${file%.sb}".cfg"
